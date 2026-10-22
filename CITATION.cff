@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software in academic work, please cite it as below."
+title: "Shock-Front Tracker: Occlusion-aware tracking of explosion shock-wave fronts"
+version: 1.0.0
+date-released: "2025-10-22"
+authors:
+  - name: "masanli1"
+license: MIT
+repository-code: "https://github.com/masanli1/shock-front-tracker"
+keywords:
+  - shock wave
+  - blast wave
+  - front tracking
+  - high-speed imaging
+  - explosion
+  - edge detection
+  - occlusion handling

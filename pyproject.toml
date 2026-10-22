@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shock-front-tracker"
+version = "1.0.0"
+description = "Occlusion-aware shock-wave front tracking for high-speed explosion imaging."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "masanli1" }]
+keywords = [
+  "shock-wave",
+  "blast-wave",
+  "front-tracking",
+  "high-speed-imaging",
+  "explosion",
+  "edge-detection",
+  "occlusion-handling",
+  "inertial-tracking",
+]
+dependencies = [
+  "numpy>=1.24",
+  "Pillow>=9.0",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Image Processing",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7",
+  "ruff>=0.5",
+  "build>=1.2",
+]
+
+[project.scripts]
+shockfront = "shockfront.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/masanli1/shock-front-tracker"
+Issues = "https://github.com/masanli1/shock-front-tracker/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+shockfront = ["py.typed"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
